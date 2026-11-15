@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sir Games - Fast, fun mobile games</title>
+<meta name="description" content="All Sir Games mobile games in one place. Free to play on Google Play.">
+<meta property="og:title" content="Sir Games">
+<meta property="og:description" content="Fast, fun mobile games. Free to play on Google Play.">
+<meta property="og:image" content="https://onrsir.github.io/assets/logo.png">
+<meta property="og:url" content="https://onrsir.github.io/">
+<link rel="icon" href="assets/logo-192.png">
+<style>
+@font-face{font-family:Russo;src:url(assets/RussoOne-Regular.ttf)}
+:root{--bg:#0b0f1a;--card:#161d2e;--fg:#f5f7fa;--mute:#9aa6bc;--a:#ffc93c;--b:#ff8a1f}
+*{box-sizing:border-box}
+html,body{margin:0;background:radial-gradient(circle at 50% 0,#2a2235,var(--bg) 60%) fixed;background-color:var(--bg);color:var(--fg);
+  font-family:-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:480px;margin:0 auto;padding:max(24px,env(safe-area-inset-top)) 16px 32px}
+header{text-align:center;margin-bottom:22px}
+header img{width:96px;height:96px;border-radius:24px;box-shadow:0 0 40px #ff8a1f55}
+h1{font:400 34px/1 Russo,"Arial Black",sans-serif;margin:12px 0 4px}
+h1 b{font-weight:400;background:linear-gradient(var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+header p{margin:0;color:var(--mute);font-size:15px}
+.game{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:18px;padding:12px;margin:12px 0;
+  text-decoration:none;color:inherit;box-shadow:0 0 0 1px #ffffff12}
+.game img{width:72px;height:72px;border-radius:16px;flex:none}
+.game div{flex:1;min-width:0}
+.game h2{font:400 18px Russo,sans-serif;margin:0 0 4px}
+.game p{margin:0;color:var(--mute);font-size:13px;line-height:1.35}
+.game span{flex:none;font:400 15px Russo,sans-serif;color:#1a1205;background:linear-gradient(var(--a),var(--b));
+  border-radius:12px;padding:10px 14px;box-shadow:0 3px 0 #b85c00}
+footer{margin-top:26px;text-align:center;color:var(--mute);font-size:13px}
+footer a{color:var(--mute)}
+</style></head><body><main>
+<header><img src="assets/logo.png" alt="Sir Games logo"><h1><b>SIR</b> GAMES</h1><p>Fast, fun mobile games. Free to play.</p></header>
+<section id="games"></section>
+<footer>Contact: <a href="mailto:oonursir@gmail.com">oonursir@gmail.com</a></footer>
+</main>
+<script>
+// Add a game: one entry here + its 192px icon in assets/games/. Newest first.
+var GAMES = [
+  {id: 'com.sir.convoyrush', icon: 'convoyrush.png', name: 'Convoy Rush',
+   text: 'Jump from truck to truck across a speeding convoy. Don’t touch the ground!'},
+  {id: 'com.onur.pressingUnderPressure', icon: 'pressingunderpressure.png', name: 'Pressing Under Pressure',
+   text: 'One button. Dozens of tricky commands. Keep your nerve and don’t press wrong.'}
+];
+// ?src=yt|tt|ig is passed to Google Play as utm_source (Play Console > acquisition reports).
+var src = new URLSearchParams(location.search).get('src') || 'web';
+var ref = '&referrer=' + encodeURIComponent('utm_source=' + src + '&utm_medium=social&utm_campaign=hub');
+var box = document.getElementById('games');
+GAMES.forEach(function (g) {
+  var a = document.createElement('a');
+  a.className = 'game';
+  a.href = 'https://play.google.com/store/apps/details?id=' + g.id + ref;
+  a.innerHTML = '<img alt=""><div><h2></h2><p></p></div><span>PLAY</span>';
+  a.querySelector('img').src = 'assets/games/' + g.icon;
+  a.querySelector('h2').textContent = g.name;
+  a.querySelector('p').textContent = g.text;
+  box.appendChild(a);
+});
+</script>
+</body></html>
