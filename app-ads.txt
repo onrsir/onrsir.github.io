@@ -164,5 +164,3 @@ xandr.com, 17779, RESELLER
 xandr.com, 7353, RESELLER
 zetaglobal.net, 525, RESELLER
 zmaticoo.com, 5135195, RESELLER
-# InMobi
-inmobi.com, 15f7de92b8ab4a4dbe4b06ad2b54e015, DIRECT, 83e75a7ae333ca9d
