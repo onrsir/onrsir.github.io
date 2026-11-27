@@ -166,3 +166,5 @@ zetaglobal.net, 525, RESELLER
 zmaticoo.com, 5135195, RESELLER
 # InMobi
 inmobi.com, 15f7de92b8ab4a4dbe4b06ad2b54e015, DIRECT, 83e75a7ae333ca9d
+# Liftoff Monetize
+vungle.com, 6b0772d8f083cd331333c6af, DIRECT, c107d686becd2d77
